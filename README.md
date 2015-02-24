@@ -39,6 +39,9 @@ bigchoo@vmk2 1005 $ sudo tail -f /var/log/mongodb/mongod.log
 ```
 * review configuration [/etc/mongod.conf](http://docs.mongodb.org/manual/reference/configuration-options/)
 * review Chef recipe [mongodb](https://supermarket.chef.io/cookbooks/mongodb#readme)
+* review Nagios passive check plugin for [MongoDB monitoring](https://github.com/mzupan/nagios-plugin-mongodb)
+* review metrics plugin for [MongoDB metrics plugin](https://collectd.org/wiki/index.php/Plugin:MongoDB)
+
 * added two nodes. One for master and another for slave
 ```
 ```
