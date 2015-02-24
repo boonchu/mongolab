@@ -85,3 +85,10 @@ testData
 > printjson( c [ 0 ] )
 { "_id" : ObjectId("54ec53f4131202d243446352"), "name" : "mongodb" }
 ```
+* how about forward link list style? Nice, isn't it? :-)
+```
+> var c = db.testData.find()
+> while ( c.hasNext() )  printjson( c.next() )
+{ "_id" : ObjectId("54ec53f4131202d243446352"), "name" : "mongodb" }
+{ "_id" : ObjectId("54ec53fe131202d243446353"), "x" : 3 }
+```
