@@ -102,5 +102,5 @@ bigchoo@vmk2 1077 $ mongo --quiet localhost:27017/mydb < test_mongo.js
    * io performance result
    * AAA security
    * firewall
-   * SSL encryption
+   * [SSL encryption](http://docs.mongodb.org/manual/administration/security-network/)
    * replication
