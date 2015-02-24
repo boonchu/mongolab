@@ -41,7 +41,30 @@ bigchoo@vmk2 1005 $ sudo tail -f /var/log/mongodb/mongod.log
 * review Chef recipe [mongodb](https://supermarket.chef.io/cookbooks/mongodb#readme)
 * review Nagios passive check plugin for [MongoDB monitoring](https://github.com/mzupan/nagios-plugin-mongodb)
 * review metrics plugin for [MongoDB metrics plugin](https://collectd.org/wiki/index.php/Plugin:MongoDB)
-
-* added two nodes. One for master and another for slave
+* start with mongo command to insert JSON documents
 ```
+bigchoo@vmk2 1010 $ mongo
+MongoDB shell version: 2.6.7
+connecting to: test
+> show dbs
+admin  (empty)
+local  0.078GB
+> use mydb
+switched to db mydb
+> db
+mydb
+> j = { name : "mongodb" }
+{ "name" : "mongodb" }
+> k = { x : 3 }
+{ "x" : 3 }
+> db.testData.insert( j )
+WriteResult({ "nInserted" : 1 })
+> db.testData.insert( k )
+WriteResult({ "nInserted" : 1 })
+> show collections
+system.indexes
+testData
+> db.testData.find()
+{ "_id" : ObjectId("54ec53f4131202d243446352"), "name" : "mongodb" }
+{ "_id" : ObjectId("54ec53fe131202d243446353"), "x" : 3 }
 ```
