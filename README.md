@@ -98,3 +98,9 @@ bigchoo@vmk2 1077 $ mongo --quiet localhost:27017/mydb < test_mongo.js
 { "_id" : ObjectId("54ec53f4131202d243446352"), "name" : "mongodb" }
 { "_id" : ObjectId("54ec53fe131202d243446353"), "x" : 3 }
 ```
+* [useful production note](http://docs.mongodb.org/manual/administration/production-notes/)
+   * io performance result
+   * AAA security
+   * firewall
+   * SSL encryption
+   * replication
