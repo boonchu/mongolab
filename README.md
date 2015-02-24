@@ -70,15 +70,7 @@ testData
 ```
 * what happens if I quit from mongo prompt and want to access db later?
 ```
-$ mongo
-> use mydb
-switched to db mydb
-> show collections
-system.indexes
-testData
-> db.testData.find()
-{ "_id" : ObjectId("54ec53f4131202d243446352"), "name" : "mongodb" }
-{ "_id" : ObjectId("54ec53fe131202d243446353"), "x" : 3 }
+$ mongo localhost:27017/mydb
 > var c = db.testData.find()
 > printjson( c [ 1 ] )
 { "_id" : ObjectId("54ec53fe131202d243446353"), "x" : 3 }
@@ -89,6 +81,20 @@ testData
 ```
 > var c = db.testData.find()
 > while ( c.hasNext() )  printjson( c.next() )
+{ "_id" : ObjectId("54ec53f4131202d243446352"), "name" : "mongodb" }
+{ "_id" : ObjectId("54ec53fe131202d243446353"), "x" : 3 }
+```
+* hmm... program in js script. I got good output like what I execute them from mongo command prompt.
+```
+bigchoo@vmk2 1078 $ cat test_mongo.js
+var conn = new Mongo();
+var db = conn.getDB("mydb");
+var c = db.testData.find();
+while ( c.hasNext() ) {
+        printjson( c.next() );
+}
+
+bigchoo@vmk2 1077 $ mongo --quiet localhost:27017/mydb < test_mongo.js
 { "_id" : ObjectId("54ec53f4131202d243446352"), "name" : "mongodb" }
 { "_id" : ObjectId("54ec53fe131202d243446353"), "x" : 3 }
 ```
