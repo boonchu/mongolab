@@ -104,3 +104,4 @@ bigchoo@vmk2 1077 $ mongo --quiet localhost:27017/mydb < test_mongo.js
    * firewall
    * [SSL encryption](http://docs.mongodb.org/manual/administration/security-network/)
    * replication
+* [production architecture design overview](http://docs.mongodb.org/manual/core/sharded-cluster-architectures-production/)
