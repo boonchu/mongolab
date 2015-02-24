@@ -68,3 +68,20 @@ testData
 { "_id" : ObjectId("54ec53f4131202d243446352"), "name" : "mongodb" }
 { "_id" : ObjectId("54ec53fe131202d243446353"), "x" : 3 }
 ```
+* what happens if I quit from mongo prompt and want to access db later?
+```
+$ mongo
+> use mydb
+switched to db mydb
+> show collections
+system.indexes
+testData
+> db.testData.find()
+{ "_id" : ObjectId("54ec53f4131202d243446352"), "name" : "mongodb" }
+{ "_id" : ObjectId("54ec53fe131202d243446353"), "x" : 3 }
+> var c = db.testData.find()
+> printjson( c [ 1 ] )
+{ "_id" : ObjectId("54ec53fe131202d243446353"), "x" : 3 }
+> printjson( c [ 0 ] )
+{ "_id" : ObjectId("54ec53f4131202d243446352"), "name" : "mongodb" }
+```
